@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/jpeg" href="images/fav.webp">
+  <title>Romeo Sizaret</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .loading-screen {
+      position: fixed;
+      top: 50px;
+      /* Start below the header */
+      left: 0;
+      width: 100%;
+      height: calc(100% - 50px);
+      /* Subtract header height */
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1500;
+      /* Below the header's z-index */
+    }
+
+    .loading-screen.hide {
+      display: none;
+    }
+
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .header {
+      height: 50px;
+      /* Fixed height to prevent changes */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      background-color: #ffffff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2000;
+      /* Above the loading screen */
+    }
+
+
+    .logo {
+      font-size: 16px;
+      font-weight: normal;
+      color: #000000;
+      text-decoration: none;
+      line-height: 1;
+      /* Force consistent line-height */
+    }
+
+    .nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1;
+      /* Force consistent line-height */
+      transition: opacity 0.3s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.6;
+    }
+
+    /* Grid styles - Image-driven dimensions */
+    .grid-container {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      padding: 10px;
+      position: fixed;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      overflow-x: auto;
+      overflow-y: hidden;
+      height: auto;
+      background: #ffffff;
+    }
+
+    .grid-container:hover {
+      overflow-x: auto;
+    }
+
+    .grid-item {
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .grid-item img {
+      display: block;
+      max-height: 70vh;
+      max-width: 700px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Placeholder for missing images */
+    .grid-item .placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      min-width: 200px;
+      min-height: 150px;
+    }
+
+    .grid-item .placeholder-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+      opacity: 0.5;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 50px;
+        height: auto;
+      }
+
+      .header {
+        padding: 15px 20px;
+      }
+
+      .nav {
+        gap: 20px;
+      }
+
+      .nav a {
+        font-size: 16px;
+      }
+
+      .grid-container {
+        display: block;
+        position: static;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        padding: 20px 10px;
+        margin-top: 0;
+        height: auto;
+        overflow: visible;
+      }
+
+      .grid-item {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .grid-item:last-child {
+        margin-bottom: 30px;
+      }
+
+      .grid-item img {
+        max-height: none;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* Hide scrollbar */
+    .grid-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .grid-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Loading animation for images */
+    .grid-item img {
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <div class="loading-screen">
+
+  </div>
+  <div class="header">
+    <a href="#" class="logo">Romeo Sizaret</a>
+    <nav class="nav">
+      <a href="about&contact.html">About & Contact</a>
+
+    </nav>
+  </div>
+
+  <!-- Your content goes here -->
+  <div class="grid-container" id="gridContainer">
+    <div class="grid-item">
+      <a href="Mercedes.html" class="project-link">
+        <img src="images/mercedes1-3.webp" alt="Project 1" />
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Handbag.html" class="project-link">
+        <img src="images/bag/1.webp" alt="Project 2" />
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Funkwerk.html" class="project-link">
+        <img src="images/flag/funkwerk1.webp" alt="Project 3" />
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Scarf.html" class="project-link">
+        <img src="images/scarf.webp" alt="Project 4" />
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="CF.html" class="project-link">
+        <img src="images/CFwhite/CFcover1.webp" alt="Project 5" />
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Waza.html" class="project-link">
+        <img src="images/W/Wcover.webp" alt="Project 6" />
+      </a>
+    </div>
+
+
+
+    <div class="grid-item">
+      <a href="AIN.html" class="project-link">
+        <img src="images/REVO.webp" alt="Project 7" />
+      </a>
+    </div>
+
+
+
+
+
+
+    <div class="grid-item">
+      <a href="CKJ.html" class="project-link">
+        <img src="images/ckj5.webp" alt="Project 10" />
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="catalogue_footage.html" class="project-link">
+        <img src="images/p/p0.webp" alt="Project 9" />
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="CFWP.html" class="project-link">
+        <img src="images/preview.webp" alt="Project 8" />
+      </a>
+    </div>
+
+
+
+  </div>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
