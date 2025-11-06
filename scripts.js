@@ -1,50 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
     const loadingScreen = document.querySelector(".loading-screen");
-    const gridContainer = document.querySelector(".grid-container");
-    
-    // Restore scroll position and hide loading screen
+    const gridContainer = document.getElementById("gridContainer");
+    const projectLinks = document.querySelectorAll(".project-link");
+    const originalItems = Array.from(document.querySelectorAll(".grid-item"));
+
+    // Hide loading screen
+    loadingScreen.classList.add("hide");
+
+    // Duplicate original set multiple times (5x for example)
+    const repeats = 5;
+    for (let i = 0; i < repeats; i++) {
+        originalItems.forEach(item => {
+            const clone = item.cloneNode(true);
+            gridContainer.appendChild(clone);
+        });
+    }
+
+    // Manual horizontal scroll via wheel
+    gridContainer.addEventListener("wheel", (e) => {
+        if (window.innerWidth > 768) {
+            e.preventDefault();
+            gridContainer.scrollLeft += e.deltaY;
+        }
+    }, { passive: false });
+
+    // Save scroll position when clicking a project link
+    projectLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            sessionStorage.setItem("indexScrollPosition", gridContainer.scrollLeft);
+        });
+    });
+
+    // Restore scroll position on page load
     const savedPosition = sessionStorage.getItem("indexScrollPosition");
     if (savedPosition !== null) {
-        gridContainer.scrollLeft = parseInt(savedPosition);
+        gridContainer.scrollLeft = parseInt(savedPosition, 10);
     }
-    
-    // Hide loading screen immediately after scroll position is restored
-    loadingScreen.classList.add("hide");
-});
-
-const gridContainer = document.querySelector(".grid-container");
-const projectLinks = document.querySelectorAll(".project-link");
-
-// Enable horizontal scrolling with mouse wheel only on desktop
-gridContainer.addEventListener("wheel", (e) => {
-  // Check if we're on mobile (max-width: 768px)
-  if (window.innerWidth > 768) {
-    e.preventDefault();
-    gridContainer.scrollLeft += e.deltaY;
-  }
-});
-
-// Save scroll position when clicking on project links
-projectLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    const scrollPosition = gridContainer.scrollLeft;
-    sessionStorage.setItem("indexScrollPosition", scrollPosition);
-  });
-});
-
-// Restore scroll position when page loads
-window.addEventListener("load", () => {
-  const savedPosition = sessionStorage.getItem("indexScrollPosition");
-  if (savedPosition !== null) {
-    gridContainer.scrollLeft = parseInt(savedPosition);
-  }
-});
-
-// Save scroll position periodically while scrolling
-let scrollTimeout;
-gridContainer.addEventListener("scroll", () => {
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    sessionStorage.setItem("indexScrollPosition", gridContainer.scrollLeft);
-  }, 100);
 });
