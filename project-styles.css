@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ===================================
+   PROJECT PAGES STYLESHEET
+   Merged from project-styles.css and project-styles2.css
+   =================================== */
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/jpeg" href="images/fav.webp">
-  <title>Romeo Sizaret</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-/* Remove extra space at the bottom of the last image ONLY for Handbag page */
-.handbag-page .project-images img:last-child {
-  margin-bottom: 0 !important;
-}
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
 * {
   margin: 0;
   padding: 0;
@@ -30,54 +20,13 @@ body {
   padding-bottom: 10px;
 }
 
-    .loading-screen {
-      position: fixed;
-      top: 50px;
-      left: 0;
-      width: 100%;
-      height: calc(100% - 50px);
-      background-color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1500;
-    }
+.italic {
+  font-style: italic;
+}
 
-    .loading-screen.hide {
-      display: none;
-    }
-
-    body {
-      font-family: "Arial", sans-serif;
-      background-color: #ffffff;
-      color: #000000;
-      line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .header {
-      height: 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 15px;
-      background-color: #ffffff;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 2000;
-    }
-
-    .logo {
-      font-size: 16px;
-      font-weight: normal;
-      color: #000000;
-      text-decoration: none;
-      line-height: 1;
-    }
+/* ===================================
+   HEADER & NAVIGATION
+   =================================== */
 .header {
   height: 50px;
   display: flex;
@@ -100,6 +49,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .nav {
@@ -110,31 +60,22 @@ body {
 .nav a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   font-style: italic;
   font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
   transition: opacity 0.3s ease;
   text-transform: uppercase;
+  line-height: 1;
 }
 
-    .nav {
-      display: flex;
-      gap: 30px;
-    }
+.nav a:hover {
+  opacity: 0.6;
+}
 
-    .nav a {
-      color: #000000;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: normal;
-      line-height: 1;
-      transition: opacity 0.3s ease;
-    }
-
-    .nav a:hover {
-      opacity: 0.6;
-    }
+/* ===================================
+   BACK BUTTON
+   =================================== */
 .back-button-section {
   padding: 60px 15px 30px;
   position: sticky;
@@ -151,311 +92,150 @@ body {
   transition: opacity 0.3s ease;
 }
 
-    .grid-container {
-      display: flex;
-      align-items: center;
-      gap: 100px;
-      padding: 10px;
-      position: fixed;
-      top: 50%;
-      left: 0;
-      right: 0;
-      transform: translateY(-50%);
-      overflow-x: auto;
-      overflow-y: hidden;
-      height: auto;
-      background: #ffffff;
-    }
+.back-button:hover {
+  opacity: 0.6;
+}
 
-    .grid-container:hover {
-      overflow-x: auto;
-    }
+/* ===================================
+   PROJECT CONTENT LAYOUT
+   =================================== */
+.project-content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+  padding: 0 15px 10px;
+  min-height: 15vh;
+  align-items: baseline;
+}
 
-    .grid-item {
-      background-color: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-      flex-shrink: 0;
-    }
+.project-title {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+  line-height: normal;
+}
 
-    .grid-item img,
-    .grid-item video {
-      display: block;
-      max-height: 70vh;
-      max-width: 700px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      transition: opacity 0.3s ease;
-    }
+.project-description p {
+  margin: 0;
+  line-height: normal;
+}
 
-    .grid-item .placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      color: #999;
-      min-width: 200px;
-      min-height: 150px;
-    }
+/* ===================================
+   PROJECT IMAGES
+   =================================== */
+.project-image {
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
 
-    .grid-item .placeholder-icon {
-      font-size: 48px;
-      margin-bottom: 10px;
-      opacity: 0.5;
-    }
 .project-images img {
   margin-bottom: 80px;
   margin-top: 80px;
   object-fit: contain;
-  }
+}
 
-    @media (max-width: 768px) {
-      body {
-        padding-top: 50px;
-        height: auto;
-      }
+.no-top-margin {
+  margin-top: 0 !important;
+}
 
-      .header {
-        padding: 15px 20px;
-      }
+.small-image {
+  max-height: 70vh;
+  width: auto;
+  object-fit: contain;
+}
 
-      .nav {
-        gap: 20px;
-      }
+.project-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 15px;
+  padding: 0 15px 15px;
+  box-sizing: border-box;
+}
 
-      .nav a {
-        font-size: 16px;
-      }
+.image-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 0 15px;
+  max-width: 800px;
+  margin: 40px auto;
+}
 
-      .grid-container {
-        display: block;
-        position: static;
-        top: 0;
-        left: 0;
-        right: 0;
-        transform: none;
-        padding: 20px 10px;
-        margin-top: 0;
-        height: auto;
-        overflow: visible;
-      }
+/* ===================================
+   PROJECT-SPECIFIC STYLES
+   =================================== */
+.handbag-page .project-images img:last-child,
 .handbag-images img:last-child {
-  margin-bottom: 0px; 
+  margin-bottom: 0 !important;
 }
 
 .mercedes-images img:last-child {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .scarf-images img:last-child {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .icons-images img:last-child {
-  margin-bottom: 100px; 
+  margin-bottom: 100px;
 }
 
-.drift-image{
-  max-width: 40vh !important; 
+.drift-image {
+  max-width: 35vh !important;
   width: auto !important;
   height: auto !important;
 }
 
-.icons-image{
-  max-width: 40vh !important; 
+.icons-image {
+  max-width: 40vh !important;
   width: auto !important;
   height: auto !important;
 }
 
-.frog-image{
-  max-width: 40vh !important; 
+.frog-image {
+  max-width: 40vh !important;
   width: auto !important;
   height: auto !important;
 }
 
+/* ===================================
+   RESPONSIVE STYLES
+   =================================== */
 @media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
   .project-content {
     grid-template-columns: 1fr;
     gap: 15px;
   }
 
-      .grid-item {
-        width: 100%;
-        margin-bottom: 30px;
-      }
+  .project-description {
+    grid-column: 1 !important;
+  }
 
-      .grid-item:last-child {
-        margin-bottom: 30px;
-      }
+  .last-column-text {
+    text-align: left !important;
+  }
+}
 
-      .grid-item img,
-      .grid-item video {
-        max-height: none;
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    .grid-container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .grid-container {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    .grid-item a[href="CFWP.html"] img {
-      max-width: 500px;
-      max-height: 65vh;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="loading-screen"></div>
-
-  <div class="header">
-    <a href="#" class="logo">Romeo Sizaret</a>
-    <nav class="nav">
-      <a href="about&contact.html">About & Contact</a>
-    </nav>
-  </div>
-
-  <div class="grid-container" id="gridContainer">
-    <div class="grid-item">
-      <a href="Mercedes.html" class="project-link">
-        <img src="images/mercedes1-3.webp" alt="Project 1" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="Handbag.html" class="project-link">
-        <img src="images/bag/1.webp" alt="Project 2" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="Funkwerk.html" class="project-link">
-        <img src="images/flag/funkwerk1.webp" alt="Project 3" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="Scarf.html" class="project-link">
-        <img src="images/scarf.webp" alt="Project 4" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="CF.html" class="project-link">
-        <img src="images/CFwhite/CFcover1.webp" alt="Project 5" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="Waza.html" class="project-link">
-        <img src="images/W/Wcover.webp" alt="Project 6" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="AIN.html" class="project-link">
-        <img src="images/REVO.webp" alt="Project 7" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="catalogue_footage.html" class="project-link">
-        <img src="images/p/p0.webp" alt="Project 8" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="Icons.html" class="project-link">
-        <img src="images/calendar/Icons.png" alt="Project 9" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="CFWP.html" class="project-link">
-        <img src="images/preview.webp" alt="Project 10" />
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="N.html" class="project-link">
-        <video src="images/Nepoleon.mp4" autoplay muted loop playsinline preload="auto" alt="Project 11"></video>
-      </a>
-    </div>
-  </div>
-
-  <script>
-    const container = document.getElementById('gridContainer');
-    
-    // Restore scroll position if returning from a project page
-    window.addEventListener('load', () => {
-      const savedScroll = sessionStorage.getItem('portfolioScrollPosition');
-      if (savedScroll && window.innerWidth > 768) {
-        setTimeout(() => {
-          container.scrollLeft = parseFloat(savedScroll);
-        }, 250);
-      }
-    });
-    
-    if (window.innerWidth > 768) {
-      // Store original HTML
-      const originalHTML = container.innerHTML;
-      
-      // Triple the content
-      container.innerHTML = originalHTML + originalHTML + originalHTML;
-      
-      // Save scroll position before navigating away
-      const projectLinks = container.querySelectorAll('.project-link');
-      projectLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          sessionStorage.setItem('portfolioScrollPosition', container.scrollLeft);
-        });
-      });
-      
-      // Initialize after content is loaded
-      setTimeout(() => {
-        // Get total scroll width
-        const totalWidth = container.scrollWidth;
-        const oneThirdWidth = totalWidth / 3;
-        
-        // Start at middle third or saved position
-        const savedScroll = sessionStorage.getItem('portfolioScrollPosition');
-        if (savedScroll) {
-          container.scrollLeft = parseFloat(savedScroll);
-        } else {
-          container.scrollLeft = oneThirdWidth;
-        }
-        
-        // Handle scroll to create infinite effect
-        container.addEventListener('scroll', () => {
-          const scrollPos = container.scrollLeft;
-          
-          // If scrolled past 2/3, jump back to 1/3
-          if (scrollPos >= oneThirdWidth * 2) {
-            container.scrollLeft = scrollPos - oneThirdWidth;
-          }
-          // If scrolled before 1/3, jump forward to 2/3
-          else if (scrollPos < oneThirdWidth / 3) {
-            container.scrollLeft = scrollPos + oneThirdWidth;
-          }
-        });
-        
-        // Convert vertical scroll to horizontal
-        container.addEventListener('wheel', (e) => {
-          e.preventDefault();
-          container.scrollLeft += e.deltaY;
-        }, { passive: false });
-      }, 200);
-    }
-    
-    // Hide loading screen
-    setTimeout(() => {
-      document.querySelector('.loading-screen').classList.add('hide');
-    }, 500);
-  </script>
-</body>
-
-</html>
+@media (max-width: 480px) {
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
