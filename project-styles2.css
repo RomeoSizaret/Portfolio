@@ -9,11 +9,8 @@
 }
 
 body {
-<<<<<<< Updated upstream
   font-family: Arial, sans-serif;
-=======
   font-family: "Arial", sans-serif;
->>>>>>> Stashed changes
   background-color: #ffffff;
   color: #000000;
   line-height: normal;
@@ -159,18 +156,14 @@ body {
   margin-bottom: 100px; 
 }
 
-<<<<<<< Updated upstream
 .drift-image{
   max-width: 40vh !important; 
-=======
 .drift-image {
   max-width: 35vh !important; 
->>>>>>> Stashed changes
   width: auto !important;
   height: auto !important;
 }
 
-<<<<<<< Updated upstream
 .icons-image{
   max-width: 40vh !important; 
   width: auto !important;
@@ -187,8 +180,6 @@ body {
 
 
 
-=======
->>>>>>> Stashed changes
 
 @media (max-width: 768px) {
   .project-content {
@@ -214,8 +205,5 @@ body {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-<<<<<<< Updated upstream
 }
-=======
 }
->>>>>>> Stashed changes

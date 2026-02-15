@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +12,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-=======
 /* Remove extra space at the bottom of the last image ONLY for Handbag page */
 .handbag-page .project-images img:last-child {
   margin-bottom: 0 !important;
@@ -31,7 +29,6 @@ body {
   line-height: normal;
   padding-bottom: 10px;
 }
->>>>>>> Stashed changes
 
     .loading-screen {
       position: fixed;
@@ -46,7 +43,6 @@ body {
       z-index: 1500;
     }
 
-<<<<<<< Updated upstream
     .loading-screen.hide {
       display: none;
     }
@@ -82,7 +78,6 @@ body {
       text-decoration: none;
       line-height: 1;
     }
-=======
 .header {
   height: 50px;
   display: flex;
@@ -122,14 +117,12 @@ body {
   transition: opacity 0.3s ease;
   text-transform: uppercase;
 }
->>>>>>> Stashed changes
 
     .nav {
       display: flex;
       gap: 30px;
     }
 
-<<<<<<< Updated upstream
     .nav a {
       color: #000000;
       text-decoration: none;
@@ -142,7 +135,6 @@ body {
     .nav a:hover {
       opacity: 0.6;
     }
-=======
 .back-button-section {
   padding: 60px 15px 30px;
   position: sticky;
@@ -158,7 +150,6 @@ body {
   font-weight: normal;
   transition: opacity 0.3s ease;
 }
->>>>>>> Stashed changes
 
     .grid-container {
       display: flex;
@@ -213,19 +204,16 @@ body {
       min-height: 150px;
     }
 
-<<<<<<< Updated upstream
     .grid-item .placeholder-icon {
       font-size: 48px;
       margin-bottom: 10px;
       opacity: 0.5;
     }
-=======
 .project-images img {
   margin-bottom: 80px;
   margin-top: 80px;
   object-fit: contain;
   }
->>>>>>> Stashed changes
 
     @media (max-width: 768px) {
       body {
@@ -245,7 +233,6 @@ body {
         font-size: 16px;
       }
 
-<<<<<<< Updated upstream
       .grid-container {
         display: block;
         position: static;
@@ -258,7 +245,6 @@ body {
         height: auto;
         overflow: visible;
       }
-=======
 .handbag-images img:last-child {
   margin-bottom: 0px; 
 }
@@ -298,7 +284,6 @@ body {
     grid-template-columns: 1fr;
     gap: 15px;
   }
->>>>>>> Stashed changes
 
       .grid-item {
         width: 100%;

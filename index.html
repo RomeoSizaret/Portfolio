@@ -20,16 +20,13 @@
 
     body {
       font-family: "Arial", sans-serif;
-<<<<<<< Updated upstream
       background: linear-gradient(to bottom, 
         #ffffff 0%, 
         #ffffff 35%, 
         #f0f0f0 50%, 
         #ffffff 65%, 
         #ffffff 100%);
-=======
       background: #000000;
->>>>>>> Stashed changes
       color: #000000;
       line-height: 1.6;
       min-height: 100vh;
@@ -37,7 +34,6 @@
       position: relative;
     }
 
-<<<<<<< Updated upstream
     .loading-screen {
       position: fixed;
       top: 50px;
@@ -53,7 +49,6 @@
 
     .loading-screen.hide {
       display: none;
-=======
     .background-image {
       position: fixed;
       top: 0;
@@ -65,7 +60,6 @@
       background-position: center;
       background-repeat: no-repeat;
       z-index: -1;
->>>>>>> Stashed changes
     }
 
     .header {
@@ -79,11 +73,8 @@
       top: 0;
       left: 0;
       right: 0;
-<<<<<<< Updated upstream
       z-index: 2000;
-=======
       z-index: 100;
->>>>>>> Stashed changes
     }
 
     .logo {
@@ -93,11 +84,8 @@
       font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
       color: #000000;
       text-decoration: none;
-<<<<<<< Updated upstream
       line-height: 1;
-=======
       text-transform: uppercase;
->>>>>>> Stashed changes
     }
 
     .nav {
@@ -108,16 +96,13 @@
     .nav a {
       color: #000000;
       text-decoration: none;
-<<<<<<< Updated upstream
       font-size: 16px;
       font-weight: normal;
       line-height: 1;
-=======
       font-size: 18px;
       font-weight: 900;
       font-style: italic;
       font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
->>>>>>> Stashed changes
       transition: opacity 0.3s ease;
       text-transform: uppercase;
     }
@@ -129,14 +114,11 @@
     .grid-container {
       display: flex;
       align-items: center;
-<<<<<<< Updated upstream
       gap: 100px;
       padding: 10px;
-=======
       justify-content: flex-start;
       gap: 30px;
       padding: 9px 30px 10px 30px;
->>>>>>> Stashed changes
       position: fixed;
       top: 50px;
       bottom: 0;
@@ -169,12 +151,9 @@
       overflow: visible;
     }
 
-<<<<<<< Updated upstream
     .grid-item img,
     .grid-item video {
-=======
     .grid-item a {
->>>>>>> Stashed changes
       display: block;
       position: relative;
     }
@@ -187,7 +166,6 @@
       width: auto;
       height: auto;
       object-fit: contain;
-<<<<<<< Updated upstream
       transition: opacity 0.3s ease;
     }
 
@@ -201,7 +179,6 @@
       color: #999;
       min-width: 200px;
       min-height: 150px;
-=======
       transition: transform 2s ease;
       transform-origin: center center;
       will-change: transform;
@@ -209,7 +186,6 @@
 
     .grid-item:hover {
       z-index: 1000;
->>>>>>> Stashed changes
     }
 
     .grid-item:hover img,
@@ -217,7 +193,6 @@
       transform: scale(var(--hover-scale, 2));
     }
 
-<<<<<<< Updated upstream
     @media (max-width: 768px) {
       body {
         padding-top: 50px;
@@ -234,13 +209,11 @@
 
       .nav a {
         font-size: 16px;
-=======
     /* Mobile Styles */
     @media (max-width: 768px) {
       body {
         padding-top: 50px;
         overflow: visible;
->>>>>>> Stashed changes
       }
 
       .grid-container {
@@ -257,13 +230,10 @@
         margin-bottom: 30px;
       }
 
-<<<<<<< Updated upstream
       .grid-item:last-child {
         margin-bottom: 30px;
       }
 
-=======
->>>>>>> Stashed changes
       .grid-item img,
       .grid-item video {
         max-height: none;
@@ -271,7 +241,6 @@
         width: 100%;
       }
     }
-<<<<<<< Updated upstream
 
     .grid-container::-webkit-scrollbar {
       display: none;
@@ -286,19 +255,14 @@
       max-width: 500px;
       max-height: 65vh;
     }
-=======
->>>>>>> Stashed changes
   </style>
 </head>
 
 <body>
-<<<<<<< Updated upstream
   <div class="loading-screen"></div>
 
-=======
   <div class="background-image"></div>
   
->>>>>>> Stashed changes
   <div class="header">
     <a href="#" class="logo">Romeo Sizaret</a>
     <nav class="nav">
@@ -307,7 +271,6 @@
   </div>
 
   <div class="grid-container" id="gridContainer">
-<<<<<<< Updated upstream
     <div class="grid-item">
       <a href="Mercedes.html" class="project-link">
         <img src="images/mercedes1-3.webp" alt="Project 1" />
@@ -361,7 +324,6 @@
     <div class="grid-item">
       <a href="N.html" class="project-link">
         <video src="images/Nepoleon.mp4" autoplay muted loop playsinline preload="auto" alt="Project 11"></video>
-=======
     <div class="grid-item" style="--image-scale: 85; --hover-scale: 1.1;">
       <a href="Mercedes.html">
         <img src="images/mercedes1-3.webp" alt="Project 1" />
@@ -424,13 +386,11 @@
     <div class="grid-item" style="--image-scale: 69;--hover-scale: 1.1;">
       <a href="IDS.html">
         <img src="images/light.jpg" alt="Project 13" />
->>>>>>> Stashed changes
       </a>
     </div>
   </div>
 
   <script>
-<<<<<<< Updated upstream
     const container = document.getElementById('gridContainer');
     
     // Restore scroll position if returning from a project page
@@ -452,7 +412,6 @@
       
       // Save scroll position before navigating away
       const projectLinks = container.querySelectorAll('.project-link');
-=======
     if (window.innerWidth > 768) {
       const container = document.getElementById('gridContainer');
       const originalHTML = container.innerHTML;
@@ -462,13 +421,11 @@
       
       // Save scroll position on navigation
       const projectLinks = container.querySelectorAll('a');
->>>>>>> Stashed changes
       projectLinks.forEach(link => {
         link.addEventListener('click', () => {
           sessionStorage.setItem('portfolioScrollPosition', container.scrollLeft);
         });
       });
-<<<<<<< Updated upstream
       
       // Initialize after content is loaded
       setTimeout(() => {
@@ -499,7 +456,6 @@
         });
         
         // Convert vertical scroll to horizontal
-=======
 
       const allItems = container.querySelectorAll('.grid-item');
       let isHovering = false;
@@ -560,12 +516,10 @@
           }, 50);
         });
         
->>>>>>> Stashed changes
         container.addEventListener('wheel', (e) => {
           e.preventDefault();
           container.scrollLeft += e.deltaY;
         }, { passive: false });
-<<<<<<< Updated upstream
       }, 200);
     }
     
@@ -577,11 +531,9 @@
 </body>
 
 </html>
-=======
       });
     }
   </script>
 </body>
 
 </html>
->>>>>>> Stashed changes

@@ -72,8 +72,5 @@ document.addEventListener("DOMContentLoaded", () => {
             window.scrollTo(0, parseInt(savedPosition, 10));
         }
     }
-<<<<<<< Updated upstream
 });
-=======
 });
->>>>>>> Stashed changes
