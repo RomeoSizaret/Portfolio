@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,25 @@
       padding: 0;
       box-sizing: border-box;
     }
+=======
+/* Remove extra space at the bottom of the last image ONLY for Handbag page */
+.handbag-page .project-images img:last-child {
+  margin-bottom: 0 !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  line-height: normal;
+  padding-bottom: 10px;
+}
+>>>>>>> Stashed changes
 
     .loading-screen {
       position: fixed;
@@ -26,6 +46,7 @@
       z-index: 1500;
     }
 
+<<<<<<< Updated upstream
     .loading-screen.hide {
       display: none;
     }
@@ -61,12 +82,54 @@
       text-decoration: none;
       line-height: 1;
     }
+=======
+.header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 900;
+  font-style: italic;
+  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 900;
+  font-style: italic;
+  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+}
+>>>>>>> Stashed changes
 
     .nav {
       display: flex;
       gap: 30px;
     }
 
+<<<<<<< Updated upstream
     .nav a {
       color: #000000;
       text-decoration: none;
@@ -79,6 +142,23 @@
     .nav a:hover {
       opacity: 0.6;
     }
+=======
+.back-button-section {
+  padding: 60px 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  mix-blend-mode: difference;
+}
+
+.back-button {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  transition: opacity 0.3s ease;
+}
+>>>>>>> Stashed changes
 
     .grid-container {
       display: flex;
@@ -133,11 +213,19 @@
       min-height: 150px;
     }
 
+<<<<<<< Updated upstream
     .grid-item .placeholder-icon {
       font-size: 48px;
       margin-bottom: 10px;
       opacity: 0.5;
     }
+=======
+.project-images img {
+  margin-bottom: 80px;
+  margin-top: 80px;
+  object-fit: contain;
+  }
+>>>>>>> Stashed changes
 
     @media (max-width: 768px) {
       body {
@@ -157,6 +245,7 @@
         font-size: 16px;
       }
 
+<<<<<<< Updated upstream
       .grid-container {
         display: block;
         position: static;
@@ -169,6 +258,47 @@
         height: auto;
         overflow: visible;
       }
+=======
+.handbag-images img:last-child {
+  margin-bottom: 0px; 
+}
+
+.mercedes-images img:last-child {
+  margin-bottom: 5px; 
+}
+
+.scarf-images img:last-child {
+  margin-bottom: 5px; 
+}
+
+.icons-images img:last-child {
+  margin-bottom: 100px; 
+}
+
+.drift-image{
+  max-width: 40vh !important; 
+  width: auto !important;
+  height: auto !important;
+}
+
+.icons-image{
+  max-width: 40vh !important; 
+  width: auto !important;
+  height: auto !important;
+}
+
+.frog-image{
+  max-width: 40vh !important; 
+  width: auto !important;
+  height: auto !important;
+}
+
+@media (max-width: 768px) {
+  .project-content {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+>>>>>>> Stashed changes
 
       .grid-item {
         width: 100%;

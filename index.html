@@ -7,6 +7,11 @@
   <link rel="icon" type="image/jpeg" href="images/fav.webp">
   <title>Romeo Sizaret</title>
   <style>
+    :root {
+      --image-scale: 100;
+      --hover-scale: 2;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,19 +20,24 @@
 
     body {
       font-family: "Arial", sans-serif;
+<<<<<<< Updated upstream
       background: linear-gradient(to bottom, 
         #ffffff 0%, 
         #ffffff 35%, 
         #f0f0f0 50%, 
         #ffffff 65%, 
         #ffffff 100%);
+=======
+      background: #000000;
+>>>>>>> Stashed changes
       color: #000000;
       line-height: 1.6;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow: hidden;
       position: relative;
     }
 
+<<<<<<< Updated upstream
     .loading-screen {
       position: fixed;
       top: 50px;
@@ -43,6 +53,19 @@
 
     .loading-screen.hide {
       display: none;
+=======
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+>>>>>>> Stashed changes
     }
 
     .header {
@@ -56,29 +79,47 @@
       top: 0;
       left: 0;
       right: 0;
+<<<<<<< Updated upstream
       z-index: 2000;
+=======
+      z-index: 100;
+>>>>>>> Stashed changes
     }
 
     .logo {
-      font-size: 16px;
-      font-weight: normal;
+      font-size: 18px;
+      font-weight: 900;
+      font-style: italic;
+      font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
       color: #000000;
       text-decoration: none;
+<<<<<<< Updated upstream
       line-height: 1;
+=======
+      text-transform: uppercase;
+>>>>>>> Stashed changes
     }
 
     .nav {
       display: flex;
-      gap: 30px;
+      gap: 15px;
     }
 
     .nav a {
       color: #000000;
       text-decoration: none;
+<<<<<<< Updated upstream
       font-size: 16px;
       font-weight: normal;
       line-height: 1;
+=======
+      font-size: 18px;
+      font-weight: 900;
+      font-style: italic;
+      font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+>>>>>>> Stashed changes
       transition: opacity 0.3s ease;
+      text-transform: uppercase;
     }
 
     .nav a:hover {
@@ -88,21 +129,29 @@
     .grid-container {
       display: flex;
       align-items: center;
+<<<<<<< Updated upstream
       gap: 100px;
       padding: 10px;
+=======
+      justify-content: flex-start;
+      gap: 30px;
+      padding: 9px 30px 10px 30px;
+>>>>>>> Stashed changes
       position: fixed;
-      top: 50%;
+      top: 50px;
+      bottom: 0;
       left: 0;
       right: 0;
-      transform: translateY(-50%);
       overflow-x: auto;
       overflow-y: hidden;
-      height: auto;
-      background: #ffffff;
+      background: transparent;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      will-change: scroll-position;
     }
 
-    .grid-container:hover {
-      overflow-x: auto;
+    .grid-container::-webkit-scrollbar {
+      display: none;
     }
 
     .grid-item {
@@ -110,19 +159,35 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      position: relative;
       flex-shrink: 0;
+      position: relative;
+      margin-left: 15px;
+      margin-right: 15px;
+      transition: transform 2s ease;
+      max-height: 80vh;
+      max-width: 80vw;
+      overflow: visible;
+    }
+
+<<<<<<< Updated upstream
+    .grid-item img,
+    .grid-item video {
+=======
+    .grid-item a {
+>>>>>>> Stashed changes
+      display: block;
+      position: relative;
     }
 
     .grid-item img,
     .grid-item video {
       display: block;
-      max-height: 70vh;
-      max-width: 700px;
+      max-height: calc(112vh * var(--image-scale) / 100);
+      max-width: calc(1120px * var(--image-scale) / 100);
       width: auto;
       height: auto;
       object-fit: contain;
+<<<<<<< Updated upstream
       transition: opacity 0.3s ease;
     }
 
@@ -136,14 +201,23 @@
       color: #999;
       min-width: 200px;
       min-height: 150px;
+=======
+      transition: transform 2s ease;
+      transform-origin: center center;
+      will-change: transform;
     }
 
-    .grid-item .placeholder-icon {
-      font-size: 48px;
-      margin-bottom: 10px;
-      opacity: 0.5;
+    .grid-item:hover {
+      z-index: 1000;
+>>>>>>> Stashed changes
     }
 
+    .grid-item:hover img,
+    .grid-item:hover video {
+      transform: scale(var(--hover-scale, 2));
+    }
+
+<<<<<<< Updated upstream
     @media (max-width: 768px) {
       body {
         padding-top: 50px;
@@ -160,18 +234,21 @@
 
       .nav a {
         font-size: 16px;
+=======
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 50px;
+        overflow: visible;
+>>>>>>> Stashed changes
       }
 
       .grid-container {
         display: block;
         position: static;
-        top: 0;
-        left: 0;
-        right: 0;
         transform: none;
         padding: 20px 10px;
-        margin-top: 0;
-        height: auto;
+        gap: 0;
         overflow: visible;
       }
 
@@ -180,18 +257,21 @@
         margin-bottom: 30px;
       }
 
+<<<<<<< Updated upstream
       .grid-item:last-child {
         margin-bottom: 30px;
       }
 
+=======
+>>>>>>> Stashed changes
       .grid-item img,
       .grid-item video {
         max-height: none;
         max-width: 100%;
         width: 100%;
-        height: auto;
       }
     }
+<<<<<<< Updated upstream
 
     .grid-container::-webkit-scrollbar {
       display: none;
@@ -206,12 +286,19 @@
       max-width: 500px;
       max-height: 65vh;
     }
+=======
+>>>>>>> Stashed changes
   </style>
 </head>
 
 <body>
+<<<<<<< Updated upstream
   <div class="loading-screen"></div>
 
+=======
+  <div class="background-image"></div>
+  
+>>>>>>> Stashed changes
   <div class="header">
     <a href="#" class="logo">Romeo Sizaret</a>
     <nav class="nav">
@@ -220,6 +307,7 @@
   </div>
 
   <div class="grid-container" id="gridContainer">
+<<<<<<< Updated upstream
     <div class="grid-item">
       <a href="Mercedes.html" class="project-link">
         <img src="images/mercedes1-3.webp" alt="Project 1" />
@@ -273,11 +361,76 @@
     <div class="grid-item">
       <a href="N.html" class="project-link">
         <video src="images/Nepoleon.mp4" autoplay muted loop playsinline preload="auto" alt="Project 11"></video>
+=======
+    <div class="grid-item" style="--image-scale: 85; --hover-scale: 1.1;">
+      <a href="Mercedes.html">
+        <img src="images/mercedes1-3.webp" alt="Project 1" />
+      </a>
+    </div>
+    <div class="grid-item" style="--image-scale: 60; --hover-scale: 1.4;">
+      <a href="Handbag.html">
+        <img src="images/bag/bagblack.jpg" alt="Project 2" />
+      </a>
+    </div>
+    <div class="grid-item" style="--image-scale: 42.5; --hover-scale: 1.7;">
+      <a href="Funkwerk.html">
+        <img src="images/flag/Funkwerk.webp" alt="Project 3" />
+      </a>
+    </div>
+    <div class="grid-item" style="--image-scale: 20.4;--hover-scale: 4.1;">
+      <a href="Waza.html">
+        <img src="images/W/Wcover.webp" alt="Project 4" />
+      </a>
+    </div>
+    <div class="grid-item" style="--image-scale: 27.2;--hover-scale: 2.8;">
+      <a href="CF.html">
+        <img src="images/CFwhite/CFcover1.webp" alt="Project 5" />
+      </a>
+    </div>
+
+       <div class="grid-item" style="--image-scale: 50;--hover-scale: 1.5;">
+      <a href="labels.html">
+        <img src="images/label/labels101.jpg" alt="Project 12" />
+      </a>
+    </div>
+
+    <div class="grid-item" style="--image-scale: 25;--hover-scale: 2.6;">
+      <a href="CGFT.html">
+        <img src="images/p/CF2.png" alt="Project 14" />
+      </a>
+    </div>
+
+
+    <div class="grid-item" style="--image-scale: 11.9;--hover-scale: 6.7;">
+      <a href="CFWP.html">
+        <img src="images/preview.webp" alt="Project 10" />
+      </a>
+    </div>
+    <div class="grid-item" style="--image-scale: 67.15;--hover-scale: 1.21;">
+      <a href="Icons.html">
+        <img src="images/calendar/Icons.png" alt="Project 9" />
+      </a>
+    </div>
+    <div class="grid-item" style="--image-scale: 59.5;--hover-scale: 1.1;">
+      <a href="CFW.html">
+        <img src="images/O/12.jpg" alt="Project 8" />
+      </a>
+    </div>
+    <div class="grid-item" style="--image-scale: 69;--hover-scale: 1.1;">
+      <a href="AIN.html">
+        <img src="images/REVO.webp" alt="Project 6" />
+      </a>
+    </div>
+    <div class="grid-item" style="--image-scale: 69;--hover-scale: 1.1;">
+      <a href="IDS.html">
+        <img src="images/light.jpg" alt="Project 13" />
+>>>>>>> Stashed changes
       </a>
     </div>
   </div>
 
   <script>
+<<<<<<< Updated upstream
     const container = document.getElementById('gridContainer');
     
     // Restore scroll position if returning from a project page
@@ -299,11 +452,23 @@
       
       // Save scroll position before navigating away
       const projectLinks = container.querySelectorAll('.project-link');
+=======
+    if (window.innerWidth > 768) {
+      const container = document.getElementById('gridContainer');
+      const originalHTML = container.innerHTML;
+      
+      // Triple content for infinite loop
+      container.innerHTML = originalHTML + originalHTML + originalHTML;
+      
+      // Save scroll position on navigation
+      const projectLinks = container.querySelectorAll('a');
+>>>>>>> Stashed changes
       projectLinks.forEach(link => {
         link.addEventListener('click', () => {
           sessionStorage.setItem('portfolioScrollPosition', container.scrollLeft);
         });
       });
+<<<<<<< Updated upstream
       
       // Initialize after content is loaded
       setTimeout(() => {
@@ -334,10 +499,73 @@
         });
         
         // Convert vertical scroll to horizontal
+=======
+
+      const allItems = container.querySelectorAll('.grid-item');
+      let isHovering = false;
+
+      // Optimized hover effect with debouncing
+      allItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', () => {
+          if (isHovering) return;
+          isHovering = true;
+
+          const media = item.querySelector('img, video');
+          const rect = media.getBoundingClientRect();
+          const hoverScale = parseFloat(getComputedStyle(item).getPropertyValue('--hover-scale')) || 2;
+          const growthAmount = (rect.width * hoverScale - rect.width) / 2;
+
+          // Use requestAnimationFrame for smoother animations
+          requestAnimationFrame(() => {
+            allItems.forEach((otherItem, otherIndex) => {
+              if (otherIndex < index) {
+                otherItem.style.transform = `translateX(-${growthAmount}px)`;
+              } else if (otherIndex > index) {
+                otherItem.style.transform = `translateX(${growthAmount}px)`;
+              }
+            });
+          });
+        });
+
+        item.addEventListener('mouseleave', () => {
+          isHovering = false;
+          requestAnimationFrame(() => {
+            allItems.forEach(otherItem => {
+              otherItem.style.transform = 'translateX(0)';
+            });
+          });
+        });
+      });
+      
+      // Infinite scroll logic
+      window.addEventListener('load', () => {
+        const oneThirdWidth = container.scrollWidth / 3;
+        const savedScroll = sessionStorage.getItem('portfolioScrollPosition');
+        
+        container.scrollLeft = savedScroll ? parseFloat(savedScroll) : oneThirdWidth;
+        
+        // Throttle scroll event for better performance
+        let scrollTimeout;
+        container.addEventListener('scroll', () => {
+          if (scrollTimeout) return;
+          
+          scrollTimeout = setTimeout(() => {
+            const scrollPos = container.scrollLeft;
+            if (scrollPos >= oneThirdWidth * 2) {
+              container.scrollLeft = scrollPos - oneThirdWidth;
+            } else if (scrollPos < oneThirdWidth / 3) {
+              container.scrollLeft = scrollPos + oneThirdWidth;
+            }
+            scrollTimeout = null;
+          }, 50);
+        });
+        
+>>>>>>> Stashed changes
         container.addEventListener('wheel', (e) => {
           e.preventDefault();
           container.scrollLeft += e.deltaY;
         }, { passive: false });
+<<<<<<< Updated upstream
       }, 200);
     }
     
@@ -349,3 +577,11 @@
 </body>
 
 </html>
+=======
+      });
+    }
+  </script>
+</body>
+
+</html>
+>>>>>>> Stashed changes
