@@ -9,7 +9,6 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   font-family: "Arial", sans-serif;
   background-color: #ffffff;
   color: #000000;
@@ -156,29 +155,11 @@ body {
   margin-bottom: 100px; 
 }
 
-.drift-image{
-  max-width: 40vh !important; 
 .drift-image {
   max-width: 35vh !important; 
   width: auto !important;
   height: auto !important;
 }
-
-.icons-image{
-  max-width: 40vh !important; 
-  width: auto !important;
-  height: auto !important;
-}
-
-
-
-.frog-image{
-  max-width: 40vh !important; 
-  width: auto !important;
-  height: auto !important;
-}
-
-
 
 
 @media (max-width: 768px) {
@@ -205,5 +186,4 @@ body {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-}
 }

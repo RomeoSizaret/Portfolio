@@ -73,16 +73,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
-
-document.addEventListener("scroll", function () {
-  const nav = document.querySelector(".side-navigation");
-
-  const scrollPosition = window.innerHeight + window.scrollY;
-  const pageHeight = document.body.offsetHeight;
-
-  if (scrollPosition >= pageHeight - 50) {
-    nav.classList.add("visible");
-  } else {
-    nav.classList.remove("visible");
-  }
-});
