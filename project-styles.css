@@ -1,7 +1,10 @@
-/* Remove extra space at the bottom of the last image ONLY for Handbag page */
-.handbag-page .project-images img:last-child {
-  margin-bottom: 0 !important;
-}
+/* ===================================
+   PROJECT PAGES STYLESHEET
+   =================================== */
+
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,13 +16,16 @@ body {
   background-color: #ffffff;
   color: #000000;
   line-height: normal;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 .italic {
   font-style: italic;
 }
 
+/* ===================================
+   HEADER & NAVIGATION
+   =================================== */
 .header {
   height: 50px;
   display: flex;
@@ -42,6 +48,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .nav {
@@ -52,18 +59,22 @@ body {
 .nav a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   font-style: italic;
   font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
   transition: opacity 0.3s ease;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .nav a:hover {
   opacity: 0.6;
 }
 
+/* ===================================
+   BACK BUTTON
+   =================================== */
 .back-button-section {
   padding: 60px 15px 30px;
   position: sticky;
@@ -84,6 +95,9 @@ body {
   opacity: 0.6;
 }
 
+/* ===================================
+   PROJECT CONTENT LAYOUT
+   =================================== */
 .project-content {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -105,23 +119,30 @@ body {
   line-height: normal;
 }
 
+/* ===================================
+   PROJECT IMAGES
+   =================================== */
 .project-image {
   width: 100%;
   max-width: 800px;
   max-height: 90vh;
   height: auto;
-  margin: 0px auto;
+  margin: 0 auto;
   display: block;
 }
 
 .project-images img {
-  margin-bottom: 80px;
-  margin-top: 80px;
+  margin-bottom: 60px;
+  margin-top: 60px;
   object-fit: contain;
-  }
+}
 
 .no-top-margin {
   margin-top: 0 !important;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0 !important;
 }
 
 .small-image {
@@ -129,6 +150,13 @@ body {
   width: auto;
   object-fit: contain;
 }
+
+.full-height-image {
+  max-height: 85vh;
+  width: auto;
+  object-fit: contain;
+}
+
 
 .project-images-grid {
   display: grid;
@@ -147,41 +175,80 @@ body {
   margin: 40px auto;
 }
 
-.handbag-images img:last-child {
-  margin-bottom: 0px; 
-}
+/* ===================================
+   PROJECT-SPECIFIC STYLES
+   =================================== */
 
-.mercedes-images img:last-child {
-  margin-bottom: 5px; 
-}
 
-.scarf-images img:last-child {
-  margin-bottom: 5px; 
-}
 
-.icons-images img:last-child {
-  margin-bottom: 100px; 
-}
-
-.drift-image{
-  max-width: 40vh !important; 
+.drift-image {
+  max-width: 35vh !important;
   width: auto !important;
   height: auto !important;
 }
 
-.icons-image{
-  max-width: 40vh !important; 
+.icons-image {
+  max-width: 40vh !important;
   width: auto !important;
   height: auto !important;
 }
 
-.frog-image{
-  max-width: 40vh !important; 
+.frog-image {
+  max-width: 40vh !important;
   width: auto !important;
   height: auto !important;
 }
 
+/* ===================================
+   PREVIOUS/NEXT NAVIGATION
+   =================================== */
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 15px;
+  margin-bottom: 5px;
+  pointer-events: none;
+}
+
+.nav-button {
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.nav-button:hover {
+  opacity: 0.6;
+}
+
+.nav-button.prev::before {
+  content: "← ";
+}
+
+.nav-button.next::after {
+  content: " →";
+}
+
+/* ===================================
+   RESPONSIVE STYLES
+   =================================== */
 @media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
   .project-content {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -194,10 +261,6 @@ body {
   .last-column-text {
     text-align: left !important;
   }
-
-  .nav {
-    gap: 15px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -205,4 +268,49 @@ body {
     grid-template-columns: 1fr;
     gap: 15px;
   }
+}
+
+/* ===================================
+   MIDDLE NAVIGATION (Vertical Center of Image)
+   =================================== */
+.project-images.with-middle-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 15px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.middle-nav-button {
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.middle-nav-button:hover {
+  opacity: 0.6;
+}
+
+.middle-nav-button.prev::before {
+  content: "← ";
+}
+
+.middle-nav-button.next::after {
+  content: " →";
 }
