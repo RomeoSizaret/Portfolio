@@ -16,7 +16,12 @@ body {
   background-color: #ffffff;
   color: #000000;
   line-height: normal;
-  padding-bottom: 15px;
+
+}
+
+
+.page-wrapper {
+  position: relative;
 }
 
 .italic {
@@ -96,6 +101,39 @@ body {
 }
 
 /* ===================================
+   SIDE NAVIGATION BUTTONS
+   =================================== */
+.side-navigation {
+  position: absolute;
+  bottom: 0vh;
+  z-index: 100;
+}
+
+.side-navigation.left {
+  left: 15px;
+}
+
+.side-navigation.right {
+  right: 15px;
+}
+
+.side-nav-button {
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  transition: opacity 0.3s ease;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0px 0px 11px;
+  border-radius: 0px;
+  display: inline-block;
+}
+
+.side-nav-button:hover {
+  opacity: 0.6;
+}
+
+/* ===================================
    PROJECT CONTENT LAYOUT
    =================================== */
 .project-content {
@@ -145,8 +183,18 @@ body {
   margin-bottom: 0 !important;
 }
 
+.small-bottom-margin {
+  margin-bottom: 0 !important;
+}
+
 .small-image {
   max-height: 70vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.smaller-image {
+  max-height: 68vh;
   width: auto;
   object-fit: contain;
 }
@@ -156,7 +204,6 @@ body {
   width: auto;
   object-fit: contain;
 }
-
 
 .project-images-grid {
   display: grid;
@@ -179,8 +226,6 @@ body {
    PROJECT-SPECIFIC STYLES
    =================================== */
 
-
-
 .drift-image {
   max-width: 35vh !important;
   width: auto !important;
@@ -200,40 +245,6 @@ body {
 }
 
 /* ===================================
-   PREVIOUS/NEXT NAVIGATION
-   =================================== */
-.project-navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 0 15px;
-  margin-bottom: 5px;
-  pointer-events: none;
-}
-
-.nav-button {
-  color: #000000;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 1;
-  transition: opacity 0.3s ease;
-  pointer-events: auto;
-}
-
-.nav-button:hover {
-  opacity: 0.6;
-}
-
-.nav-button.prev::before {
-  content: "← ";
-}
-
-.nav-button.next::after {
-  content: " →";
-}
-
-/* ===================================
    RESPONSIVE STYLES
    =================================== */
 @media (max-width: 768px) {
@@ -242,7 +253,7 @@ body {
   }
 
   .nav {
-    gap: 15px;
+    gap: 5px;
   }
 
   .nav a {
@@ -260,6 +271,10 @@ body {
 
   .last-column-text {
     text-align: left !important;
+  }
+
+  .side-navigation {
+    display: none;
   }
 }
 
