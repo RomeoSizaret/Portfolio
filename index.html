@@ -73,7 +73,7 @@
     .nav a {
       color: #000000;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 900;
       font-style: italic;
       font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
@@ -85,6 +85,7 @@
       opacity: 0.6;
     }
 
+    /* ── Desktop layout ── */
     .grid-container {
       display: flex;
       align-items: center;
@@ -150,32 +151,57 @@
       transform: scale(var(--hover-scale, 2));
     }
 
-    /* Mobile Styles */
+    /* ── Mobile styles ── */
     @media (max-width: 768px) {
       body {
-        padding-top: 50px;
-        overflow: visible;
+        overflow-y: auto;
+        overflow-x: hidden;
       }
 
       .grid-container {
+        /* Switch to vertical block flow */
         display: block;
         position: static;
-        transform: none;
-        padding: 20px 10px;
-        gap: 0;
         overflow: visible;
+        padding: 70px 0 40px 0; /* 70px top = header height + breathing room */
+        gap: 0;
+        width: 100%;
       }
 
       .grid-item {
+        /* Full-width block, no shrinking, no size tricks */
+        display: block;
         width: 100%;
-        margin-bottom: 30px;
+        max-width: 100%;
+        max-height: none;
+        margin: 0 0 2px 0; /* tight gap between images */
+        padding: 0;
+        overflow: hidden;
+        transition: none;
+        transform: none !important;
+      }
+
+      .grid-item a {
+        display: block;
+        width: 100%;
       }
 
       .grid-item img,
       .grid-item video {
+        display: block;
+        width: 100%;
+        height: auto;
         max-height: none;
         max-width: 100%;
-        width: 100%;
+        object-fit: cover;
+        transform: none !important;
+        transition: none;
+      }
+
+      /* Kill hover scale on mobile */
+      .grid-item:hover img,
+      .grid-item:hover video {
+        transform: none !important;
       }
     }
   </style>
@@ -217,20 +243,16 @@
         <img src="images/CFwhite/CFcover1.webp" alt="Project 5" />
       </a>
     </div>
-
-       <div class="grid-item" style="--image-scale: 50;--hover-scale: 1.5;">
+    <div class="grid-item" style="--image-scale: 50;--hover-scale: 1.5;">
       <a href="labels.html">
         <img src="images/label/labels101.jpg" alt="Project 6" />
       </a>
     </div>
-
     <div class="grid-item" style="--image-scale: 25;--hover-scale: 2.6;">
       <a href="CGFT.html">
         <img src="images/p/CF2.png" alt="Project 7" />
       </a>
     </div>
-
-
     <div class="grid-item" style="--image-scale: 11.9;--hover-scale: 6.7;">
       <a href="CFWP.html">
         <img src="images/preview.webp" alt="Project 8" />
@@ -246,26 +268,21 @@
         <img src="images/O/scarf11.png" alt="Project 10" />
       </a>
     </div>
- <div class="grid-item" style="--image-scale: 78;--hover-scale: 1.1;">
+    <div class="grid-item" style="--image-scale: 78;--hover-scale: 1.1;">
       <a href="KAD.html">
         <img src="images/Kadir/kadir.png" alt="Project 11" />
       </a>
-
     </div>
-
     <div class="grid-item" style="--image-scale: 69;--hover-scale: 1.1;">
       <a href="AIN.html">
         <img src="images/REVO.webp" alt="Project 12" />
       </a>
-
-
     </div>
     <div class="grid-item" style="--image-scale: 69;--hover-scale: 1.1;">
       <a href="IDS.html">
         <img src="images/light.jpg" alt="Project 13" />
       </a>
-
-     
+    </div>
   </div>
 
   <script>
@@ -298,7 +315,6 @@
           const hoverScale = parseFloat(getComputedStyle(item).getPropertyValue('--hover-scale')) || 2;
           const growthAmount = (rect.width * hoverScale - rect.width) / 2;
 
-          // Use requestAnimationFrame for smoother animations
           requestAnimationFrame(() => {
             allItems.forEach((otherItem, otherIndex) => {
               if (otherIndex < index) {
@@ -327,7 +343,6 @@
         
         container.scrollLeft = savedScroll ? parseFloat(savedScroll) : oneThirdWidth;
         
-        // Throttle scroll event for better performance
         let scrollTimeout;
         container.addEventListener('scroll', () => {
           if (scrollTimeout) return;
